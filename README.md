@@ -19,7 +19,10 @@ One Approach to solve this issue is presented below.
 ## Cubic_point_cloud_publisher
 
 1. The `cubic_point_cloud_publisher.py.` publishes Cubic point cloud on the topic `/point_cloud`, which covers a section of the 3D Space in Rviz. Please use the `CUBE_SIZE` and `CUBE_SPACING` variables to change the size and density of the point cloud, respectively.
-To change the coordinates of the cube please vary the upper and lower bound on np.arrage used for the calculation x,y and z coordinates, as required.   
+To change the coordinates of the cube please vary the upper and lower bound on np.arrage used for the calculation x,y and z coordinates, as required.
+
+![alt text](rviz_cubic_point_cloud.jpeg "Cubic Point Cloud in Rviz")
+
 
 *NOTE*: Please be careful when changing `CUBE_SIZE` and `CUBE_SPACING` variables, as rendering a large point cloud requires alot of processing power.
 
