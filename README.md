@@ -18,7 +18,7 @@ One Approach to solve this issue is presented below.
 
 ## Cubic_point_cloud_publisher
 
-1. The `cubic_point_cloud_publisher.py.` publishes Cubic point cloud on the topic `/point_cloud`, which covers a section of the 3D Space in Rviz. Please use the `CUBE_SIZE` and `CUBE_SPACING` variables to change the size and density of the point cloud, respectively.
+The `cubic_point_cloud_publisher.py.` publishes Cubic point cloud on the topic `/point_cloud`, which covers a section of the 3D Space in Rviz. Please use the `CUBE_SIZE` and `CUBE_SPACING` variables to change the size and density of the point cloud, respectively.
 To change the coordinates of the cube please vary the upper and lower bound on np.arrage used for the calculation x,y and z coordinates, as required.
 
 ![alt text](rviz_cubic_point_cloud.jpeg "Cubic Point Cloud in Rviz")
@@ -26,6 +26,35 @@ To change the coordinates of the cube please vary the upper and lower bound on n
 
 *NOTE*: Please be careful when changing `CUBE_SIZE` and `CUBE_SPACING` variables, as rendering a large point cloud requires alot of processing power.
 
+## Sample CropBox_Filter
+
+The sample Cropbox Filter is just proivded here for testing purposes. To build the nodes please execute the following command in the base directory of this repo:
+
+```
+cd sample_cropbox_filter
+```
+
+```
+catkin_make
+```
+
+
+*NOTE:* Please make sure to source your ROS distro before executing the above. For example,
+```
+source /opt/ros/noetic/setup.bash
+```
+
+To run the node execute the following commands:
+
+```
+source devel/setup.bash
+```
+
+```
+rosrun sample_pcl_cropbox_filter_node cropbox_filter_node
+```
+
+![alt text](rviz_sample_cropbox_filter_node.png "Filtered Point Cloud in Rviz")
 
 ## Supported Platforms
 
@@ -36,4 +65,4 @@ To change the coordinates of the cube please vary the upper and lower bound on n
 ```
     ROS1
 ```
-*NOTE:* These scripts were tested on ROS NEOTIC But they should be valid for other version of ROS1 which support PointCloud2 msg.
+*NOTE:* These ROS nodes were tested on ROS NEOTIC but they should be valid for other version of ROS1 which support PointCloud2 msg.
